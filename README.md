@@ -1,5 +1,5 @@
 # Outdated Codes Repo.
-简体中文
+[简体中文](https://github.com/JNSMS-VexRoboticsAssociation/Outdated-Codes/blob/main/README_cn.md)
 
 The repository of messy and rotten outdated code left by seniors.(To be honest)
 

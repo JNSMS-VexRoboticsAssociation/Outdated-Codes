@@ -1,6 +1,6 @@
 # 过时代码仓库
 
-English
+[English](https://github.com/JNSMS-VexRoboticsAssociation/Outdated-Codes/blob/main/README.md)
 
 这是学长们写的又乱又烂的代码的仓库。（#认真脸）
 
