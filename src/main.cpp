@@ -139,29 +139,44 @@ void hou(int time, int c, int d) {
 
 void autonomous(void) {
     xi(100, 80, 80);
-    sj(500, 80, 80);
-    xi(1400, 80, 80);
+    tui(500, -80, -80);
+    xi(1000, 80, 80);
     Motor7.spin(reverse, 80, velocityUnits::pct);
     Motor8.spin(reverse, 80, velocityUnits::pct);
-    task::sleep(500);
+    task::sleep(450);
     Motor7.stop();
     Motor8.stop();
     Motor5.spin(reverse, 80, velocityUnits::pct);
     Motor6.spin(reverse, 80, velocityUnits::pct);
-    task::sleep(500);
+    task::sleep(350);
     Motor5.stop();
     Motor6.stop();
-
     Motor7.spin(forward, 80, velocityUnits::pct);
     Motor8.spin(forward, 80, velocityUnits::pct);
-    task::sleep(500);
+    task::sleep(800);
     Motor7.stop();
     Motor8.stop();
-
     wait(0.5, seconds);
+    tui(1700, 80, 80);
+    sj(240, -80, 80);//转弯
+    /*hou(1000,80,80);*/
+    sj(1000, 80, 80);
+    xi(400, 80, 80);
+    sj(200, -80, -80);
+    tui(350, -80, -80);
+    xi(1000, 80, 80);//二框吸
+    Motor7.spin(reverse, 80, velocityUnits::pct);
+    Motor8.spin(reverse, 80, velocityUnits::pct);
+    task::sleep(200);
+    Motor7.stop();
+    Motor8.stop();
     tui(500, 80, 80);
-    hou(1000, 80, 80);
-    ////一坨自动程序·····
+    Motor7.spin(forward, 80, velocityUnits::pct);
+    Motor8.spin(forward, 80, velocityUnits::pct);
+    task::sleep(400);
+    Motor7.stop();
+    Motor8.stop();
+    hou(800, 80, 80);
 
 
     // ..........................................................................
@@ -244,34 +259,34 @@ void usercontrol(void) {
     Controller1.ButtonDown.pressing() ? Motor8.spin(directionType::fwd, 100, velocityUnits::pct) : Motor8.stop();
 
 
-        if (Controller1.ButtonY.pressing()) {
-            xi(100, 80, 80);
-            tui(600, -80, -80);
-            xi(1400, 80, 80);
-            Motor7.spin(reverse, 80, velocityUnits::pct);
-            Motor8.spin(reverse, 80, velocityUnits::pct);
-            task::sleep(500);
-            Motor7.stop();
-            Motor8.stop();
-            /*Motor5.spin(reverse,80,velocityUnits::pct);
-            Motor6.spin(reverse,80,velocityUnits::pct);
-            task::sleep(500);
-            Motor5.stop();
-            Motor6.stop();*/
+        /*if(Controller1.ButtonY.pressing()){
+          xi(100,80,80);
+          sj(500,80,80);
+          xi(1400,80,80);
+          Motor7.spin(reverse,80,velocityUnits::pct);
+          Motor8.spin(reverse,80,velocityUnits::pct);
+          task::sleep(500);
+          Motor7.stop();
+          Motor8.stop();
+          Motor5.spin(reverse,80,velocityUnits::pct);
+          Motor6.spin(reverse,80,velocityUnits::pct);
+          task::sleep(500);
+          Motor5.stop();
+          Motor6.stop();
 
-            Motor7.spin(forward, 80, velocityUnits::pct);
-            Motor8.spin(forward, 80, velocityUnits::pct);
-            task::sleep(500);
-            Motor7.stop();
-            Motor8.stop();
+          Motor7.spin(forward,80,velocityUnits::pct);
+          Motor8.spin(forward,80,velocityUnits::pct);
+          task::sleep(500);
+          Motor7.stop();
+          Motor8.stop();
 
-            wait(0.5, seconds);
-            tui(500, 80, 80);
-            hou(1000, 80, 80);
-            ////一坨自动程序·····
+          wait(0.5, seconds);
+          tui(500,80,80);
+          hou(1000,80,80);
+          ////一坨自动程序·····
         }
 
-        /* if(Controller1.ButtonA.pressing()){
+         if(Controller1.ButtonA.pressing()){
           xi(100,80,80);
           tui(500,-80,-80);
           xi(1400,80,80);
@@ -308,47 +323,53 @@ void usercontrol(void) {
           Motor8.stop();
           tui(500,80,80);
 
-         }
-
-
-         if(Controller1.ButtonX.pressing()){
-          xi(100,80,80);
-          sj(500,80,80);
-          xi(1400,80,80);
-          Motor7.spin(reverse,80,velocityUnits::pct);
-          Motor8.spin(reverse,80,velocityUnits::pct);
-          task::sleep(500);
-          Motor7.stop();
-          Motor8.stop();
-          Motor5.spin(reverse,80,velocityUnits::pct);
-          Motor6.spin(reverse,80,velocityUnits::pct);
-          task::sleep(500);
-          Motor5.stop();
-          Motor6.stop();
-
-          Motor7.spin(forward,80,velocityUnits::pct);
-          Motor8.spin(forward,80,velocityUnits::pct);
-          task::sleep(500);
-          Motor7.stop();
-          Motor8.stop();
-
-          wait(0.5, seconds);
-          tui(1900,80,80);
-          sj(230,-80,80);//转弯
-          hou(1000,80,80);
-          sj(1000,80,80);
-          xi(400,80,80);
-          sj(200,-80,-80);
-          tui(250,-80,-80);
-          xi(1000,80,80);
-          Motor7.spin(reverse,80,velocityUnits::pct);
-          Motor8.spin(reverse,80,velocityUnits::pct);
-          task::sleep(800);
-          Motor7.stop();
-          Motor8.stop();
-          tui(500,80,80);
-
          }*/
+
+
+        if (Controller1.ButtonX.pressing()) {
+            xi(100, 80, 80);
+            tui(500, -80, -80);
+            xi(1000, 80, 80);
+            Motor7.spin(reverse, 80, velocityUnits::pct);
+            Motor8.spin(reverse, 80, velocityUnits::pct);
+            task::sleep(450);
+            Motor7.stop();
+            Motor8.stop();
+            Motor5.spin(reverse, 80, velocityUnits::pct);
+            Motor6.spin(reverse, 80, velocityUnits::pct);
+            task::sleep(350);
+            Motor5.stop();
+            Motor6.stop();
+
+            Motor7.spin(forward, 80, velocityUnits::pct);
+            Motor8.spin(forward, 80, velocityUnits::pct);
+            task::sleep(800);
+            Motor7.stop();
+            Motor8.stop();
+
+            wait(0.5, seconds);
+            tui(1700, 80, 80);
+            sj(240, -80, 80);//转弯
+            /*hou(1000,80,80);*/
+            sj(1000, 80, 80);
+            xi(400, 80, 80);
+            sj(200, -80, -80);
+            tui(350, -80, -80);
+            xi(800, 80, 80);//二框吸
+            Motor7.spin(reverse, 80, velocityUnits::pct);
+            Motor8.spin(reverse, 80, velocityUnits::pct);
+            task::sleep(200);
+            Motor7.stop();
+            Motor8.stop();
+            tui(500, 80, 80);
+            Motor7.spin(forward, 80, velocityUnits::pct);
+            Motor8.spin(forward, 80, velocityUnits::pct);
+            task::sleep(400);
+            Motor7.stop();
+            Motor8.stop();
+            hou(800, 80, 80);
+
+        }
 
         /*while(Inertial.rotation() < 90){
            Motor1.spin(forward,100,velocityUnits::pct);
